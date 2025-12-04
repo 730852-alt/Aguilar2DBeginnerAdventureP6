@@ -206,6 +206,68 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &148869924
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 148869926}
+  - component: {fileID: 148869925}
+  - component: {fileID: 148869927}
+  m_Layer: 5
+  m_Name: UIDocument
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &148869925
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 148869924}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 19102, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_PanelSettings: {fileID: 11400000, guid: 3867ed91bf845ea4091eecf7f09f5848, type: 2}
+  m_ParentUI: {fileID: 0}
+  sourceAsset: {fileID: 9197481963319205126, guid: 4c00f2d05249f5846a62fd67de467a35,
+    type: 3}
+  m_SortingOrder: 0
+--- !u!4 &148869926
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 148869924}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &148869927
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 148869924}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac677a6de2570c64788167113162775a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &151552435
 GameObject:
   m_ObjectHideFlags: 0
@@ -360,6 +422,7 @@ GameObject:
   - component: {fileID: 159203087}
   - component: {fileID: 159203086}
   - component: {fileID: 159203088}
+  - component: {fileID: 159203089}
   m_Layer: 0
   m_Name: DamageZone
   m_TagString: Untagged
@@ -479,6 +542,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 5.19124, y: 3.0711064}
   m_EdgeRadius: 0
+--- !u!114 &159203089
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 159203085}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fc455e584b13c14ea156f7c63f0a2ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &256599841
 GameObject:
   m_ObjectHideFlags: 0
@@ -69444,6 +69519,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6054346309447323655, guid: a90df09f797ffd3438738191962ae5d5,
         type: 3}
+      propertyPath: timeInvincible
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6054346309447323655, guid: a90df09f797ffd3438738191962ae5d5,
+        type: 3}
       propertyPath: MoveAction.m_SingletonActionBindings.Array.size
       value: 10
       objectReference: {fileID: 0}
@@ -69649,3 +69729,4 @@ SceneRoots:
   - {fileID: 1858324192}
   - {fileID: 151552439}
   - {fileID: 587198337}
+  - {fileID: 148869926}
