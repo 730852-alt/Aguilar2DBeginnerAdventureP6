@@ -8,6 +8,10 @@ public class UIHandler : MonoBehaviour
     private VisualElement m_Healthbar;
     public static UIHandler instance { get; private set; }
 
+    public float displayTime = 4.0f;
+    private VisualElement m_NonplayerDialogue;
+    private float m_TimerDisplay;
+
     private void Awake()
     {
        instance = this;
@@ -19,11 +23,31 @@ public class UIHandler : MonoBehaviour
         UIDocument uiDocument = GetComponent<UIDocument>();
         m_Healthbar = uiDocument.rootVisualElement.Q<VisualElement>("HealthBar");
         SetHealthValue(1.0f);
-        
+
+        m_NonplayerDialogue = uiDocument.rootVisualElement.Q<VisualElement>("NPCDialogue");
+        m_NonplayerDialogue.style.display = DisplayStyle.None;
+        m_TimerDisplay = -1.0f;
+    }
+    private void Update()
+    {
+        if (m_TimerDisplay > 0)
+        {
+            m_TimerDisplay -= Time.deltaTime;   
+            if (m_TimerDisplay < 0)
+            {
+                m_NonplayerDialogue.style.display = DisplayStyle.None;
+            }
+        }
     }
 
     public void SetHealthValue(float percentage)
     {
         m_Healthbar.style.width = Length.Percent(100 * percentage);
+    }
+
+    public void DisplayDialogue()
+    {
+        m_NonplayerDialogue.style.display = DisplayStyle.Flex;
+        m_TimerDisplay = displayTime;
     }
 }

@@ -12,7 +12,7 @@ public class EnemyController : MonoBehaviour
     Rigidbody2D rigidbody2d;
     float timer;
     int direction = 1;
-
+    bool broken = true;
     Animator animator;
 
 
@@ -40,6 +40,10 @@ public class EnemyController : MonoBehaviour
 
      void FixedUpdate()
     {
+        if(!broken)
+        {
+            return;
+        }
         Vector2 position = rigidbody2d.position;
 
         if (vertical)
@@ -68,5 +72,15 @@ public class EnemyController : MonoBehaviour
             player.ChangeHealth(-1);
         }
         
+    }
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        Destroy(gameObject);
+    }
+    public void Fix()
+    {
+        broken = false;
+        GetComponent<Rigidbody2D>().simulated = false;
+        animator.SetTrigger("Fixed");
     }
 }

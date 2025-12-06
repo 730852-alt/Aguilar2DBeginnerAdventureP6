@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6054346309447323655}
   - component: {fileID: 5398511915474502448}
   - component: {fileID: 4925785716097698985}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: PlayerCharacter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -179,6 +179,7 @@ MonoBehaviour:
   speed: 10
   maxHealth: 5
   timeInvincible: 2
+  projectilePrefab: {fileID: 0}
 --- !u!61 &5398511915474502448
 BoxCollider2D:
   m_ObjectHideFlags: 0
