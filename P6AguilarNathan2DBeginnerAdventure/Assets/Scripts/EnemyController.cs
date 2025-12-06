@@ -50,7 +50,7 @@ public class EnemyController : MonoBehaviour
         }
         else
         {
-            animator.SetFloat("Move X", 0);
+            animator.SetFloat("Move X", direction);
             animator.SetFloat("Move Y", 0);
             position.x = position.x + speed * direction * Time.deltaTime;
         }
