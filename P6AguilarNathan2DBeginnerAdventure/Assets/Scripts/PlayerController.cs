@@ -25,6 +25,8 @@ public class PlayerController : MonoBehaviour
     public GameObject projectilePrefab;
 
     AudioSource audioSource;
+    public AudioClip throwSound;
+    public AudioClip hitSound;
 
     void Start()
     {
@@ -89,6 +91,7 @@ public class PlayerController : MonoBehaviour
             }
             isInvincible = true;
             damageCooldown = timeInvincible;
+            PlaySound(hitSound);
             animator.SetTrigger("Hit");
         }
         currentHealth = Mathf.Clamp(currentHealth + amount, 0, maxHealth);
@@ -103,6 +106,7 @@ public class PlayerController : MonoBehaviour
         Projectile projectile = projectileObject.GetComponent<Projectile>();
         projectile.Launch(moveDirection, 300);
         animator.SetTrigger("Launch");
+        PlaySound(throwSound);
     }
 
 
